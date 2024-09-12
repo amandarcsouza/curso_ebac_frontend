@@ -48,7 +48,7 @@
             </nav>
         </div>
     </header>
-    <div data-bs-spy="scroll" data-bs-target="cabecalho" data-bs-smooth-scroll="true"><!--data-bs-spy="scroll" deixa o item selecionado em destaque mudando a cor de fundo e coloca o efeito rolagem de tela; class: data-bs-smooth-scroll configura deslocamento destino, suporte a rolagem de tela, entre outras funçóes -->
+    <div data-bs-spy="scroll" data-bs-target="#cabecalho" data-bs-smooth-scroll="true"><!--data-bs-spy="scroll" deixa o item selecionado em destaque mudando a cor de fundo e coloca o efeito rolagem de tela; class: data-bs-smooth-scroll configura deslocamento destino, suporte a rolagem de tela, entre outras funçóes -->
         <section id="sobre-o-restaurante">
             <div class="carousel slide" data-bs-ride="carousel" id="carousel">
                 <div class="carousel-inner">
@@ -372,9 +372,18 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-    <script src="./js/jquery.mask.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#telefone').mask('(00) 00000-0000');
+            $('form').validate({        
+                submitHandler: function() {
+                    alert("Mensagem enviada com sucesso!")
+                }        
+            });
+        })
+    </script>
 </body>
 </html>
